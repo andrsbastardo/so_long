@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/21 17:39:45 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/25 16:13:52 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 1
 # endif
 
 /* ···· libraries ···· */
@@ -24,9 +24,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdint.h>
 
 /* ···· size ···· */
-# define PX 50
+/* # define PX 50 */
 
 /* ···· sprites route ···· */
 # define PATH "assets/path.xpm"
@@ -109,5 +110,20 @@ t_parsemap		*init_struct(void);
 int				parse_map(char *argv, t_parsemap **mapinf);
 
 //UTILS
-int	ft_strncmpend(char *s1, char *s2, int n);
+int		ft_strncmpend(char *s1, char *s2, int n);
+char	*get_next_line(int fd);
+int	ft_strlen(char *s);
+int ft_strlen_mod(char *str);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *leftovers, char *buff);
+char	*ft_get_line(char *leftovers);
+char	*ft_leftovers(char *leftovers);
+char	*ft_strdup(char *s);
+char	*ft_read(int fd, char *text);
+char *ft_strjoin_mod(char *str1, char *str2);
+char	**ft_split(char const *s, char c);
+size_t	ft_strlcpy(char *dest, const char *src, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_bzero(void *s, size_t n);
+
 #endif

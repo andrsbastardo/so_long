@@ -6,15 +6,15 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:39:58 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/21 17:40:25 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/25 16:12:28 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-size_t	ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!s)

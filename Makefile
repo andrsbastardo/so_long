@@ -6,18 +6,18 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 17:19:50 by abastard          #+#    #+#              #
-#    Updated: 2025/01/22 07:10:57 by abastard         ###   ########.fr        #
+#    Updated: 2025/01/25 16:03:23 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprinttf.a
+NAME = so_long.a
 
-SRC =	main.c parse.c utils.c init_struct.c
+SRC =	main.c utils.c utils2.c init_struct.c parse.c gnl.c gnl_utils.c split.c
 
 OBJS = $(SRC:.c=.o)
 
 CC = gcc
-#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 RM = rm -rf
 AR = ar crs
 
