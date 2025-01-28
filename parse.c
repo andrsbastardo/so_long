@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:35 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/28 17:01:12 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:43:48 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ int	exit_obj_check(t_parsemap **mapinf)
 		{
 			if ((*mapinf)->map[x][y] == 'P')
 				(*mapinf)->player_num++;
-			if ((*mapinf)->map[x][y] == 'C')
+			else if ((*mapinf)->map[x][y] == 'C')
 				(*mapinf)->obj++;
-			if ((*mapinf)->map[x][y] == 'E')
+			else if ((*mapinf)->map[x][y] == 'E')
 				(*mapinf)->exit_num++;
-			y++;
+			else if ((*mapinf)->map[x][y] != '1' && (*mapinf)->map[x][y] != '0')
+                return(0); 
+            y++;
 		}
-		x++;
+        x++;
 	}
 	if ((*mapinf)->player_num != 1 || (*mapinf)->exit_num != 1
 		|| (*mapinf)->obj == 0)

@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:38 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/25 15:42:11 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:04:53 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 int main(int argc, char **argv)
 {
     t_parsemap	*mapinf;
-    int cosa;
+    int parse;
     
     if (argc != 2 || ft_strncmpend(argv[1], ".ber", 4) == 0)
         return(0);
     mapinf = init_struct();
-    cosa = parse_map(argv[1], &mapinf);
-    if(!cosa)
+    parse = parse_map(argv[1], &mapinf);
+    if(!parse)
         return(0);
+    
+    
     return(0);
 }
