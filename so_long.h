@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/25 16:13:52 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:57:57 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,11 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
+int count_height(t_parsemap **mapinf);
+int	borders_check(t_parsemap **mapinf);
+int	exit_obj_check(t_parsemap **mapinf);
+int check_exit_player(t_parsemap **mapinf);
+int validate_map(t_parsemap **mapinf);
+void water_pour(t_parsemap **mapinf, int x, int y);
 
 #endif

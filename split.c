@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 15:59:42 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/25 16:00:03 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:15:05 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static char	**coupler(char **res, char const *s, char c, size_t string)
 	}
 	return (res);
 }
+
 
 char	**ft_split(char const *s, char c)
 {
