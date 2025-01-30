@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/28 16:57:57 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/30 05:48:29 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdint.h>
+# include <mlx.h>
 
 /* ···· size ···· */
 /* # define PX 50 */

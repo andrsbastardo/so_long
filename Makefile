@@ -6,41 +6,72 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 17:19:50 by abastard          #+#    #+#              #
-#    Updated: 2025/01/28 16:42:53 by abastard         ###   ########.fr        #
+#    Updated: 2025/01/30 06:31:36 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long.a
+#···COLOURS·····#
+BLU			= \033[0;34m
+GRN			= \033[0;32m
+RED			= \033[0;31m
+PUR			= \033[0;35m
+YLW			= \033[0;33m
+RST			= \033[0m
+END			= \e[0m
 
+#···NAME········#
+NAME = so_long
+
+#···PATH········#
+SRC_PATH = src/
+OBJ_PATH = obj/
+INC_PATH = inc/
+MLX_PATH = minilibx-linux/
+
+#····CC + FLAGS ···#
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS += -I $(INC_PATH) -I $(SRC_PATH) -I $(MLX_PATH)
+#MLX_FLAGS = -Lmlx -lmlx
+
+#···INC········#
+INC = so_long.h
+
+#···SRCS········#
 SRC =	main.c utils.c utils2.c init_struct.c parse.c gnl.c gnl_utils.c split.c validate_map.c
+OBJ_NAME = $(SRC:%.c=%.o)
+OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 
-OBJS = $(SRC:.c=.o)
-
-CC = gcc
-CFLAGS = -g -Wall -Wextra -Werror
 RM = rm -rf
-AR = ar crs
 
-$(NAME): $(OBJS)
-		$(AR) $(NAME) $(OBJS)
+#···RULES······#
+.PHONY: all re clean fclean debug run
 
-main: all
-		$(CC) main.c $(NAME) -o main.out
+all: $(NAME)
+	@echo "\033[2K\r${GRN}[CREATED]\033[0m $(NAME)\n"
+# $(MLX_FLAGS)  > AÑADIRLAS A $(NAME) RULE
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@ $(CFLAGS) $(MLX_FLAGS) $(LDFLAGS) $(LDLIBS)
+	@echo "\033[2K\r${PUR}[COMPILING LIBFT]${RST}'$<'\n"
+
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INC_PATH)/$(INC)
+	@mkdir -p $(OBJ_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "\033[2K\r${BLU}[COMPILING SOURCES]${RST}'$<'\n"
+
+debug: CFLAGS += -fsanitize=address -g3
+debug: $(NAME)
+
+clean:
+	$(RM) $(OBJ_PATH)
+	@echo "\033[2K\r${RED}[CLEANED]\033[0m $(NAME)\n"
+
+fclean: clean
+	$(RM) $(NAME)
+	@echo "\033[2K\r${RED}[FCLEANED]\033[0m $(NAME)\n"
+	
+re: fclean all
 
 run: re main clean
 		./main.out map.ber
 		$(RM) main.out
-		
-
-all: $(NAME)
-
-clean:
-		$(RM) $(OBJS)
-
-fclean: clean
-		$(RM) $(NAME)
-		$(RM) main.out
-
-re: 	fclean all
-
-.PHONY: all clean fclean re main run
