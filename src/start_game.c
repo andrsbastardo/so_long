@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 17:19:38 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/30 07:53:56 by abastard         ###   ########.fr       */
+/*   Created: 2025/01/30 07:54:13 by abastard          #+#    #+#             */
+/*   Updated: 2025/01/30 07:54:14 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-int main(int argc, char **argv)
-{
-    t_parsemap	*mapinf;
-    int parse;
-    
-    if (argc != 2 || ft_strncmpend(argv[1], ".ber", 4) == 0)
-        return(0);
-    mapinf = init_struct();
-    parse = parse_map(argv[1], &mapinf);
-    if(!parse)
-        return(0);
-    start_game(mapinf);
-    return(0);
-}

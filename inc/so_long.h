@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/30 05:48:29 by abastard         ###   ########.fr       */
+/*   Updated: 2025/01/30 06:50:12 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@
 # include <mlx.h>
 
 /* ···· size ···· */
-/* # define PX 50 */
-
+# ifndef PX
+# define PX 50 
+# endif
 /* ···· sprites route ···· */
 # define PATH "assets/path.xpm"
 # define GRASS "assets/Grass.xpm"

@@ -6,7 +6,7 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 17:19:50 by abastard          #+#    #+#              #
-#    Updated: 2025/01/30 06:31:36 by abastard         ###   ########.fr        #
+#    Updated: 2025/01/30 07:52:43 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ MLX_PATH = minilibx-linux/
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 CFLAGS += -I $(INC_PATH) -I $(SRC_PATH) -I $(MLX_PATH)
-#MLX_FLAGS = -Lmlx -lmlx
+MLX_FLAGS = -Lmlx -lmlx -Lminilibx-linux -lX11 -lXext
 
 #···INC········#
 INC = so_long.h
