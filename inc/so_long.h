@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/30 06:50:12 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/05 06:51:19 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,8 @@ int	exit_obj_check(t_parsemap **mapinf);
 int check_exit_player(t_parsemap **mapinf);
 int validate_map(t_parsemap **mapinf);
 void water_pour(t_parsemap **mapinf, int x, int y);
+int	start_game(t_parsemap *mapinf);
+int	close_program(t_graphics *g);
+void	init_image(t_graphics *g, t_sprites *s);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 17:19:50 by abastard          #+#    #+#              #
-#    Updated: 2025/01/30 07:52:43 by abastard         ###   ########.fr        #
+#    Updated: 2025/02/05 06:59:45 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ MLX_FLAGS = -Lmlx -lmlx -Lminilibx-linux -lX11 -lXext
 INC = so_long.h
 
 #···SRCS········#
-SRC =	main.c utils.c utils2.c init_struct.c parse.c gnl.c gnl_utils.c split.c validate_map.c
+SRC = utils.c utils2.c init_struct.c parse.c gnl.c gnl_utils.c split.c validate_map.c start_game.c init_game.c main.c
 OBJ_NAME = $(SRC:%.c=%.o)
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 
@@ -70,8 +70,4 @@ fclean: clean
 	$(RM) $(NAME)
 	@echo "\033[2K\r${RED}[FCLEANED]\033[0m $(NAME)\n"
 	
-re: fclean all
-
-run: re main clean
-		./main.out map.ber
-		$(RM) main.out
+re: fclean all clean
