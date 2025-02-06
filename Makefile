@@ -6,7 +6,7 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 17:19:50 by abastard          #+#    #+#              #
-#    Updated: 2025/02/05 06:59:45 by abastard         ###   ########.fr        #
+#    Updated: 2025/02/06 07:01:31 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,19 +26,20 @@ NAME = so_long
 SRC_PATH = src/
 OBJ_PATH = obj/
 INC_PATH = inc/
+PRF_PATH = printf/
 MLX_PATH = minilibx-linux/
 
 #····CC + FLAGS ···#
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
-CFLAGS += -I $(INC_PATH) -I $(SRC_PATH) -I $(MLX_PATH)
+CFLAGS += -I $(INC_PATH) -I $(SRC_PATH) -I $(MLX_PATH) -I $(PRF_PATH)
 MLX_FLAGS = -Lmlx -lmlx -Lminilibx-linux -lX11 -lXext
 
 #···INC········#
 INC = so_long.h
 
 #···SRCS········#
-SRC = utils.c utils2.c init_struct.c parse.c gnl.c gnl_utils.c split.c validate_map.c start_game.c init_game.c main.c
+SRC = key_hooks.c movements.c utils.c utils2.c init_struct.c parse.c gnl.c gnl_utils.c split.c validate_map.c start_game.c init_game.c main.c
 OBJ_NAME = $(SRC:%.c=%.o)
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 

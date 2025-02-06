@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/05 06:51:19 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/06 06:58:41 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 /* ···· size ···· */
 # ifndef PX
-# define PX 50 
+# define PX 30
 # endif
 /* ···· sprites route ···· */
 # define PATH "assets/path.xpm"
@@ -136,5 +136,12 @@ void water_pour(t_parsemap **mapinf, int x, int y);
 int	start_game(t_parsemap *mapinf);
 int	close_program(t_graphics *g);
 void	init_image(t_graphics *g, t_sprites *s);
+int	close_program(t_graphics *g);
+void	check_exit(t_graphics *g);
+int	key_hook(int key, t_graphics *g);
+void	move_character_s(t_graphics *g);
+void	move_character_w(t_graphics *g);
+void	move_character_a(t_graphics *g);
+void	move_character_d(t_graphics *g);
 
 #endif

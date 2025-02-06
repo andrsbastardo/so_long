@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 06:10:17 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/05 07:58:47 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/06 06:36:25 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ static int	load_background(t_graphics *g, t_sprites *s)
 	g->s->wall = mlx_xpm_file_to_image(g->p, GRASS, &x, &y);
 	if (!s->wall)
 		return (1);
-	s->apple = mlx_xpm_file_to_image(g->p, APPLE, &x, &y);
+	g->s->apple = mlx_xpm_file_to_image(g->p, APPLE, &x, &y);
 	if (!s->apple)
 		return (1);
-	s->excl = mlx_xpm_file_to_image(g->p, ROCK, &x, &y);
+	g->s->excl = mlx_xpm_file_to_image(g->p, ROCK, &x, &y);
 	if (!s->excl)
 		return (1);
-	s->exit_op = mlx_xpm_file_to_image(g->p, MASK, &x, &y);
+	g->s->exit_op = mlx_xpm_file_to_image(g->p, MASK, &x, &y);
 	if (!s->exit_op)
 		return (1);
-	s->f = mlx_xpm_file_to_image(g->p, PATH, &x, &y);
+	g->s->f = mlx_xpm_file_to_image(g->p, PATH, &x, &y);
 	if (!s->f)
 		return (1);
 	return (0);
@@ -72,16 +72,16 @@ void	init_image(t_graphics *g, t_sprites *s)
 		i = -1;
 		while (g->inf->clean_map[j][++i])
 		{
-			if (g->inf->clean_map[j][i] == '1')
-				mlx_put_image_to_window(g->p, g->w, s->wall, i * PX, j * PX);
-			else if (g->inf->clean_map[j][i] == '0')
-				mlx_put_image_to_window(g->p, g->w, s->f, i * PX, j * PX);
-			else if (g->inf->clean_map[j][i] == 'E')
-				mlx_put_image_to_window(g->p, g->w, s->excl, i * PX, j * PX);
-			else if (g->inf->clean_map[j][i] == 'P')
-				mlx_put_image_to_window(g->p, g->w, s->crash_r, i * PX, j * PX);
+			if (g->inf->clean_map[j][i] == '0')
+				mlx_put_image_to_window(g->p, g->w, s->f, i * PX, j * PX); 
 			else if (g->inf->clean_map[j][i] == 'C')
 				mlx_put_image_to_window(g->p, g->w, s->apple, i * PX, j * PX);
+			else if (g->inf->clean_map[j][i] == 'E')
+				mlx_put_image_to_window(g->p, g->w, s->exit_op, i * PX, j * PX);
+			else if (g->inf->clean_map[j][i] == 'P')
+				mlx_put_image_to_window(g->p, g->w, s->f, i * PX, j * PX);
+			else if (g->inf->clean_map[j][i] == '1')
+				mlx_put_image_to_window(g->p, g->w, s->excl, i * PX, j * PX);
 		}
 		j++;
 	}

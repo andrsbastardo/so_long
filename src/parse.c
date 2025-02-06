@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:35 by abastard          #+#    #+#             */
-/*   Updated: 2025/01/28 17:43:48 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/06 06:32:11 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,7 @@ int count_height(t_parsemap **mapinf)
 
     i = 0;
     while ((*mapinf)->clean_map[i])
-    {
-        printf("%s\n", (*mapinf)->clean_map[i]);
         i++;
-    }
     (*mapinf)->w_y = i;
     return(i);
 }
@@ -102,8 +99,9 @@ int file_to_map(t_parsemap **mapinf)
         }
         str = get_next_line((*mapinf)->fd);
     }
+    /* printf("%s\n",aux); */
     (*mapinf)->clean_map = ft_split(aux,'\n');
-    (*mapinf)->map = (*mapinf)->clean_map;
+    (*mapinf)->map = ft_split(aux,'\n');
     return(1);
 }
 

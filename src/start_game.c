@@ -6,19 +6,11 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 07:54:13 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/05 07:10:24 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/06 06:55:25 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	close_program(t_graphics *g)
-{
-	mlx_destroy_window(g->p, g->w);
-	system("leaks -q so_long");
-	exit(EXIT_SUCCESS);
-	return (0);
-}
 
 int	start_game(t_parsemap *mapinf)
 {
@@ -39,7 +31,7 @@ int	start_game(t_parsemap *mapinf)
 	if (!g->w)
 		return(0);
 	init_image(g, s);
-	/* mlx_key_hook(g->w, &key_hook, g); */
+	mlx_key_hook(g->w, &key_hook, g);
 	mlx_hook(g->w, 17, 0, close_program, g);
 	mlx_loop(g->p);
 	return (1);
