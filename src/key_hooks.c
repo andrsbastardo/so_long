@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 06:54:58 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/06 06:56:31 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/09 10:11:23 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,29 @@ void	check_exit(t_graphics *g)
 int	key_hook(int key, t_graphics *g)
 {
 	if (key == ESC || key == KEY_Q)
+	{
+		printf("esc\n");
 		close_program(g);
+	}
 	else if (key == KEY_A || key == KEY_LEFT)
+	{
+		printf("A\n");
 		move_character_a(g);
+	}
 	else if (key == KEY_D || key == KEY_RIGHT)
+	{
+		printf("D\n");
 		move_character_d(g);
+	}
 	else if (key == KEY_S || key == KEY_DOWN)
+	{
+		printf("S\n");
 		move_character_s(g);
+	}
 	else if (key == KEY_W || key == KEY_UP)
+	{
+		printf("Wq55\n");
 		move_character_w(g);
+	}
 	return (0);
 }

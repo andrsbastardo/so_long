@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:19:06 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/06 06:58:41 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:05:21 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 /* ···· libraries ···· */
 # include <fcntl.h>
+# include <ft_printf.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -43,16 +44,16 @@
 # define CRASHLEFT "assets/crash_left.xpm"
 
 /* ····· keybinds ····· */
-# define ESC 53
-# define KEY_Q 12
-# define KEY_W 13
-# define KEY_A 0 
-# define KEY_D 2
-# define KEY_S 1
-# define KEY_UP 126
-# define KEY_RIGHT 124
-# define KEY_LEFT 123
-# define KEY_DOWN 125
+# define ESC 0xff1b
+# define KEY_Q 0x71
+# define KEY_W 0x77
+# define KEY_A 0x61
+# define KEY_D 0x64
+# define KEY_S 0x73
+# define KEY_UP 0xff52
+# define KEY_RIGHT 0xff53
+# define KEY_LEFT 0xff51
+# define KEY_DOWN 0xff54
 
 typedef struct s_sprites
 {

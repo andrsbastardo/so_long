@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 06:57:35 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/06 07:09:38 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:23:19 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	move_character_d(t_graphics *g)
 		}
 		mlx_put_image_to_window(g->p, g->w, g->s->crash_r, y * PX, x * PX);
 		g->inf->player.mov += 1;
-		/* ft_printf("Taps: %d\n", g->inf->player.mov); */
-	}
+/* 		printf("Taps: %d\n", g->inf->player.mov);
+ */	}
 	check_exit(g);
 }
 
@@ -49,7 +49,7 @@ void	move_character_a(t_graphics *g)
 	if (g->inf->clean_map[x][y - 1] != '1')
 	{
 		if (g->inf->clean_map[x][y] == '0' || g->inf->clean_map[x][y] == 'P')
-			mlx_put_image_to_window(g->p, g->w, g->s->f, y * PX, x * PX);
+			mlx_put_image_to_window(g->p, g->w, g->s->wall, y * PX, x * PX);
 		if (g->inf->clean_map[x][y] == 'E' && g->inf->obj != 0)
 			mlx_put_image_to_window(g->p, g->w, g->s->excl, y * PX, x * PX);
 		g->inf->player.y -= 1;

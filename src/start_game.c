@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 07:54:13 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/06 06:55:25 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/09 09:40:06 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	start_game(t_parsemap *mapinf)
 	if (!g->w)
 		return(0);
 	init_image(g, s);
+	printf("Iniciado\n");
 	mlx_key_hook(g->w, &key_hook, g);
 	mlx_hook(g->w, 17, 0, close_program, g);
 	mlx_loop(g->p);
