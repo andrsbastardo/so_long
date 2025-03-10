@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 06:57:35 by abastard          #+#    #+#             */
-/*   Updated: 2025/02/09 11:23:19 by abastard         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:15:56 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	move_character_d(t_graphics *g)
 		}
 		mlx_put_image_to_window(g->p, g->w, g->s->crash_r, y * PX, x * PX);
 		g->inf->player.mov += 1;
-/* 		printf("Taps: %d\n", g->inf->player.mov);
- */	}
+		printf("Taps: %d\n", g->inf->player.mov);
+	}
 	check_exit(g);
 }
 
